@@ -2,7 +2,7 @@ package mainpkg;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import static mainpkg.utilities.View.loadView;
+import static mainpkg.utilities.ViewUtility.loadView;
 
 /**
  *
@@ -12,7 +12,7 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        loadView("Welcome", null);
+       loadView("Welcome", null);
     }
 
     /**
