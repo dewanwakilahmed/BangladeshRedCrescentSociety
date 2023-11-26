@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -21,11 +22,13 @@ public class ViewUtility {
         }
         
         String viewFilePath = createViewFilePath(viewName);
+        Image icon = new Image("/resources/icons/bdrcs-logo.png");
         
         Parent root = FXMLLoader.load(ViewUtility.class.getResource(viewFilePath));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         
+        stage.getIcons().add(icon);
         stage.setTitle(viewName + " - Bangladesh Red Crescent Society");
         stage.setScene(scene);
         stage.show();
