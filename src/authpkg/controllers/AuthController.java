@@ -43,7 +43,8 @@ public class AuthController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        retypePasswordLabel.setVisible(false);
+        retypePasswordField.setVisible(false);
     }    
 
     @FXML
@@ -52,6 +53,21 @@ public class AuthController implements Initializable {
 
     @FXML
     private void switchMode(ActionEvent event) {
+        if (titleText.getText().equals("Create a New Account")) {
+            titleText.setText("Login to your Account");
+            retypePasswordLabel.setVisible(false);
+            retypePasswordField.setVisible(false);
+            authButton.setText("Login");
+            switchLabel.setText("Don't have an Account?");
+            switchButton.setText("Register");
+        } else {            
+            titleText.setText("Create a New Account");
+            retypePasswordLabel.setVisible(true);
+            retypePasswordField.setVisible(true);
+            authButton.setText("Register");
+            switchLabel.setText("Already have an account?");
+            switchButton.setText("Login");
+        }
     }
     
 }
