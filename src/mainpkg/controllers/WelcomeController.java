@@ -19,12 +19,11 @@ public class WelcomeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }
 
     @FXML
     private void loadAuthView(ActionEvent event) throws Exception {
-        loadView("Auth", event);
+        loadView("Authentication", event);
     }
 
 }

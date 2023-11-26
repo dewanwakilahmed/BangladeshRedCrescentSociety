@@ -1,4 +1,4 @@
-package authpkg.controllers;
+package authenticationpkg.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,7 +17,7 @@ import javafx.scene.text.Text;
  *
  * @author dewan
  */
-public class AuthController implements Initializable {
+public class AuthenticationController implements Initializable {
 
     @FXML
     private Text titleText;
