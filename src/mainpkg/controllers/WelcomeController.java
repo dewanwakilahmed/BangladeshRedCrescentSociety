@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import static mainpkg.utilities.View.loadView;
 
 /**
  * FXML Controller class
@@ -22,7 +23,8 @@ public class WelcomeController implements Initializable {
     }
 
     @FXML
-    private void loadAuthView(ActionEvent event) {
+    private void loadAuthView(ActionEvent event) throws Exception {
+        loadView("Auth", event);
     }
 
 }
