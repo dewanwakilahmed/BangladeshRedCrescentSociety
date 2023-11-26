@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  *
  * @author dewan
  */
-public class View {
+public class ViewUtility {
 
     public static void loadView(String viewName, ActionEvent event) throws Exception {
         if (event != null) {
@@ -22,7 +22,7 @@ public class View {
         
         String viewFilePath = createViewFilePath(viewName);
         
-        Parent root = FXMLLoader.load(View.class.getResource(viewFilePath));
+        Parent root = FXMLLoader.load(ViewUtility.class.getResource(viewFilePath));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         
