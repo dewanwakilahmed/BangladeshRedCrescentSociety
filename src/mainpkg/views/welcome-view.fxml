@@ -5,12 +5,12 @@
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" 
+<VBox fx:controller="mainpkg.controllers.WelcomeController"
+      alignment="CENTER" 
       spacing="20" 
       xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="mainpkg.controllers.WelcomeController"
-      prefHeight="500" 
-      prefWidth="750">
+      prefWidth="750" 
+      prefHeight="500" > 
 
       <Text text="Welcome to Bangladesh Red Crescent Society" 
             style="-fx-font-size: 28px; -fx-text-alignment: CENTER;"

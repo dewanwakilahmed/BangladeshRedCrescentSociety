@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import static mainpkg.utilities.View.loadView;
+import static mainpkg.utilities.ViewUtility.loadView;
 
 /**
  * FXML Controller class
