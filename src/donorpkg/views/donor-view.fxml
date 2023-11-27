@@ -97,7 +97,31 @@
         
         <Tab closable="false" text="Goods Donation">
             <content>
-                <!-- Put controls for making goods donations here -->
+                <GridPane alignment="CENTER" hgap="10" vgap="10">
+                    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                        <Label text="Make Goods Donation" style="-fx-font-size: 18;" />
+                    </HBox>
+                    <Text text="* The amount below is in Kilogram (KG)" style="-fx-font-size: 10;" wrappingWidth="300" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                    <Text text="* Your donation package pickup address is set below from your profile, you can change it if you want us to pick from a different location" style="-fx-font-size: 10;" wrappingWidth="300" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                    <Label text="Pickup Address:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="pickupAddressField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                        <Label text="Create Donation Package" style="-fx-font-size: 16;" />
+                    </HBox>
+                    <Label text="Select Item:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <ComboBox fx:id="itemComboBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    <Label text="Amount (KG):" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                    <TextField fx:id="amountField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    <Button text="Add Item" prefWidth="200" onAction="#addItem" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                    <TableView fx:id="itemsTable" maxWidth="220" maxHeight="100" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="8">
+                        <columns>
+                            <TableColumn fx:id="noColumn" text="No." prefWidth="25" />
+                            <TableColumn fx:id="itemColumn" text="Item" prefWidth="120" />
+                            <TableColumn fx:id="amountColumn" text="Amount" prefWidth="75" />
+                        </columns>
+                    </TableView>
+                    <Button text="Donate Package" prefWidth="200" onAction="#donatePackage" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                </GridPane>
             </content>
         </Tab>
         
