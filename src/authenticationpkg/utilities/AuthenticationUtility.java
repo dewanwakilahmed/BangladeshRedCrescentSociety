@@ -2,7 +2,9 @@ package authenticationpkg.utilities;
 
 import authenticationpkg.models.User;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -86,6 +88,21 @@ public class AuthenticationUtility {
         } else {
             showError("User not found!");
             return false;
+        }
+    }
+    
+    public static boolean registerUser(User user, TextField userNameTextField, PasswordField passwordField, ComboBox userRoleComboBox) {
+        if (user != null) {
+            showError("User already exists!");
+            return false;
+        } else {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/resources/data/registered-users.txt", true))) {
+                writer.write(userNameTextField.getText() + " " + passwordField.getText() + " " + userRoleComboBox.getValue() + "\n");
+                return true;
+            } catch (IOException e) {
+                showError("An error occurred while writing to the data file.");
+                return false;
+            }
         }
     }
     
