@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import static authenticationpkg.utilities.AuthenticationUtility.makeSwitch;
+import static mainpkg.utilities.InitializeViewsUtility.loadComboBox;
 
 /**
  * FXML Controller class
@@ -24,7 +25,7 @@ public class AuthenticationController implements Initializable {
     @FXML
     private Text titleText;
     @FXML
-    private ComboBox<?> userRoleComboBox;
+    private ComboBox<String> userRoleComboBox;
     @FXML
     private TextField userNameTextField;
     @FXML
@@ -51,10 +52,14 @@ public class AuthenticationController implements Initializable {
         if (isLoginMode) {
             makeSwitch(titleText, "Login to your Account", retypePasswordLabel, false, retypePasswordField, false, authButton, "Login", switchLabel, "Don't have an account?", switchButton, "Register");
         }
+        
+        String[] userRolesArray = {"Donor", "Beneficiary", "Admin", "Staff", "Accounts Manager", "Inventory Manager", "Shelter Manager", "Medical Professional"};     
+        loadComboBox(userRoleComboBox, userRolesArray);
     }    
 
     @FXML
     private void handleAuth(ActionEvent event) {
+        
     }
 
     @FXML
