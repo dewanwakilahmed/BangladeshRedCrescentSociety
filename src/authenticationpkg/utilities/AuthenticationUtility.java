@@ -75,4 +75,18 @@ public class AuthenticationUtility {
         return null;
     }
     
+    public static boolean loginUser(User user, PasswordField passwordField) {
+        if (user != null) {
+            if (user.getUserPassword().equals(passwordField.getText())) {
+                return true;
+            } else {
+                showError("Incorrect Password!");
+                return false;
+            }
+        } else {
+            showError("User not found!");
+            return false;
+        }
+    }
+    
 }
