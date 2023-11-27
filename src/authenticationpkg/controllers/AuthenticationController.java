@@ -11,9 +11,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-
-import static authenticationpkg.utilities.AuthenticationUtility.makeSwitch;
+import authenticationpkg.models.User;
 import static mainpkg.utilities.InitializeViewsUtility.loadComboBox;
+import static authenticationpkg.utilities.AuthenticationUtility.findUser;
+import static authenticationpkg.utilities.AuthenticationUtility.loginUser;
+import static authenticationpkg.utilities.AuthenticationUtility.makeSwitch;
+import static authenticationpkg.utilities.AuthenticationUtility.registerUser;
+import static authenticationpkg.utilities.AuthenticationUtility.validateInput;
 
 /**
  * FXML Controller class
@@ -59,7 +63,24 @@ public class AuthenticationController implements Initializable {
 
     @FXML
     private void handleAuth(ActionEvent event) {
-        
+        if (validateInput(userNameTextField, passwordField, userRoleComboBox, isLoginMode, retypePasswordField)) {
+            boolean canUserBeAuthenticated;
+            User user = findUser(userNameTextField, userRoleComboBox);
+            
+            if (isLoginMode) {
+                canUserBeAuthenticated = loginUser(user, passwordField);
+            } else {
+                canUserBeAuthenticated = registerUser(user, userNameTextField, passwordField, userRoleComboBox);
+            }
+            
+            if (canUserBeAuthenticated) {
+                if (user == null) {
+                    user = findUser(userNameTextField, userRoleComboBox);
+                }
+                
+                System.out.println(user.getUserName() + " has been successfully authenticated!");
+            }
+        }
     }
 
     @FXML
