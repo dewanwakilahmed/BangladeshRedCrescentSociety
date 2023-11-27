@@ -58,7 +58,14 @@ public class AuthenticationController implements Initializable {
     }
 
     @FXML
-    private void switchMode(ActionEvent event) { 
+    private void switchMode(ActionEvent event) {
+        isLoginMode = !isLoginMode;
+
+        if (isLoginMode) {
+            makeSwitch(titleText, "Login to your Account", retypePasswordLabel, false, retypePasswordField, false, authButton, "Login", switchLabel, "Don't have an account?", switchButton, "Register");
+        } else {
+            makeSwitch(titleText, "Register a New Account", retypePasswordLabel, true, retypePasswordField, true, authButton, "Register", switchLabel, "Already have an account?", switchButton, "Login");
+        }
     }
     
 }
