@@ -12,6 +12,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import static authenticationpkg.utilities.AuthenticationUtility.makeSwitch;
+
 /**
  * FXML Controller class
  *
@@ -37,12 +39,18 @@ public class AuthenticationController implements Initializable {
     private Label switchLabel;
     @FXML
     private Button switchButton;
+    
+    private boolean isLoginMode;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        isLoginMode = true;        
+        if (isLoginMode) {
+            makeSwitch(titleText, "Login to your Account", retypePasswordLabel, false, retypePasswordField, false, authButton, "Login", switchLabel, "Don't have an account?", switchButton, "Register");
+        }
     }    
 
     @FXML
