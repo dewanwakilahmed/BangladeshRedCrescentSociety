@@ -58,4 +58,21 @@ public class AuthenticationUtility {
         return true;
     }
     
+    public static User findUser(TextField userNameTextField, ComboBox<String> userRoleComboBox) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/resources/data/registered-users.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(" ");
+                if (data[0].equals(userNameTextField.getText()) && data[2].equals(userRoleComboBox.getValue())) {
+                    return new User(data[0], data[1], data[2]);
+                }
+            }
+        } catch (IOException e) {
+            showError("An error occurred while reading the data file!");
+            return null;
+        }
+
+        return null;
+    }
+    
 }
