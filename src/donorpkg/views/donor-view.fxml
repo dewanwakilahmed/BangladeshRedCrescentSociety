@@ -24,7 +24,7 @@
             <Insets bottom="10" left="15" right="15" top="10" />
         </padding>
         
-        <Label fx:id="welcomeMessage" style="-fx-font-size: 22;" text="Welcome John Doe" />
+        <Label fx:id="welcomeMessage" style="-fx-font-size: 22;" />
         <Pane HBox.hgrow="ALWAYS" />
         <Button onAction="#logout" text="Logout" />
     </HBox>

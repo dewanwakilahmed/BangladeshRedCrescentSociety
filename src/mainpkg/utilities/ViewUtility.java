@@ -19,7 +19,7 @@ public class ViewUtility {
             Node source = (Node) event.getSource();
             Stage currentStage = (Stage) source.getScene().getWindow();
             currentStage.close();
-        }
+        }   
         
         String viewFilePath = createViewFilePath(viewName);
         Image icon = new Image("/resources/icons/bdrcs-logo.png");
