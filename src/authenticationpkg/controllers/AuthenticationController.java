@@ -18,6 +18,7 @@ import static authenticationpkg.utilities.AuthenticationUtility.loginUser;
 import static authenticationpkg.utilities.AuthenticationUtility.makeSwitch;
 import static authenticationpkg.utilities.AuthenticationUtility.registerUser;
 import static authenticationpkg.utilities.AuthenticationUtility.validateInput;
+import static authenticationpkg.utilities.AuthenticationUtility.authenticateUser;
 
 /**
  * FXML Controller class
@@ -62,23 +63,18 @@ public class AuthenticationController implements Initializable {
     }    
 
     @FXML
-    private void handleAuth(ActionEvent event) {
+    private void handleAuth(ActionEvent event) throws Exception {
         if (validateInput(userNameTextField, passwordField, userRoleComboBox, isLoginMode, retypePasswordField)) {
-            boolean canUserBeAuthenticated;
-            User user = findUser(userNameTextField, userRoleComboBox);
+            User userToBeAuthenticated = findUser(userNameTextField, userRoleComboBox);
             
             if (isLoginMode) {
-                canUserBeAuthenticated = loginUser(user, passwordField);
+                userToBeAuthenticated = loginUser(userToBeAuthenticated, passwordField);
             } else {
-                canUserBeAuthenticated = registerUser(user, userNameTextField, passwordField, userRoleComboBox);
+                userToBeAuthenticated = registerUser(userToBeAuthenticated, userNameTextField, passwordField, userRoleComboBox);
             }
             
-            if (canUserBeAuthenticated) {
-                if (user == null) {
-                    user = findUser(userNameTextField, userRoleComboBox);
-                }
-                
-                System.out.println(user.getUserName() + " has been successfully authenticated!");
+            if (userToBeAuthenticated != null) {
+                authenticateUser(userToBeAuthenticated, event);
             }
         }
     }

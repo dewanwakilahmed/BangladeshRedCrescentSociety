@@ -1,6 +1,5 @@
 package authenticationpkg.utilities;
 
-import authenticationpkg.models.User;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -12,7 +11,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.event.ActionEvent;
+import authenticationpkg.models.Session;
+import authenticationpkg.models.User;
 import static mainpkg.utilities.ErrorUtility.showError;
+import static mainpkg.utilities.ViewUtility.loadView;
 
 /**
  *
@@ -77,32 +80,46 @@ public class AuthenticationUtility {
         return null;
     }
     
-    public static boolean loginUser(User user, PasswordField passwordField) {
+    public static User loginUser(User user, PasswordField passwordField) {
         if (user != null) {
             if (user.getUserPassword().equals(passwordField.getText())) {
-                return true;
+                System.out.println(user.toString() + " has been logged in successfully!");
+                return user;
             } else {
                 showError("Incorrect Password!");
-                return false;
+                return null;
             }
         } else {
             showError("User not found!");
-            return false;
+            return null;
         }
     }
     
-    public static boolean registerUser(User user, TextField userNameTextField, PasswordField passwordField, ComboBox userRoleComboBox) {
+    public static User registerUser(User user, TextField userNameTextField, PasswordField passwordField, ComboBox userRoleComboBox) {
         if (user != null) {
             showError("User already exists!");
-            return false;
+            return null;
         } else {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/resources/data/registered-users.txt", true))) {
                 writer.write(userNameTextField.getText() + " " + passwordField.getText() + " " + userRoleComboBox.getValue() + "\n");
-                return true;
+                user = findUser(userNameTextField, userRoleComboBox);
+                System.out.println(user.toString() + " has been registered successfully!");
+                return user;
             } catch (IOException e) {
-                showError("An error occurred while writing to the data file.");
-                return false;
+                showError("An error occurred while writing to the data file!");
+                return null;
             }
+        }
+    }
+    
+    public static void authenticateUser(User user, ActionEvent event) throws Exception {        
+        Session.setInstance(user);
+        
+        if (Session.getInstance() != null) {
+            loadView(user.getUserRole(), event);
+        } else {
+            System.out.println("User can not be authenticated at the moment!");
+            showError("User can not be authenticated at the moment!");
         }
     }
     
