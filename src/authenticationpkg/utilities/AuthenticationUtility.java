@@ -67,7 +67,7 @@ public class AuthenticationUtility {
         try (BufferedReader reader = new BufferedReader(new FileReader("src/resources/data/registered-users.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] data = line.split(" ");
+                String[] data = line.split("  ");
                 if (data[0].equals(userNameTextField.getText()) && data[2].equals(userRoleComboBox.getValue())) {
                     return new User(data[0], data[1], data[2]);
                 }
@@ -95,13 +95,14 @@ public class AuthenticationUtility {
         }
     }
     
-    public static User registerUser(User user, TextField userNameTextField, PasswordField passwordField, ComboBox userRoleComboBox) {
+    public static User registerUser(User user, TextField userNameTextField, PasswordField passwordField, ComboBox<String> userRoleComboBox) {
         if (user != null) {
             showError("User already exists!");
             return null;
         } else {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/resources/data/registered-users.txt", true))) {
-                writer.write(userNameTextField.getText() + " " + passwordField.getText() + " " + userRoleComboBox.getValue() + "\n");
+                writer.write(userNameTextField.getText() + "  " + passwordField.getText() + "  " + userRoleComboBox.getValue() + "\n");
+                writer.flush();            
                 user = findUser(userNameTextField, userRoleComboBox);
                 System.out.println(user.toString() + " has been registered successfully!");
                 return user;
@@ -116,6 +117,7 @@ public class AuthenticationUtility {
         Session.setInstance(user);
         
         if (Session.getInstance() != null) {
+            System.out.println(user.toString() + " has been authenticated successfully!");
             loadView(user.getUserRole(), event);
         } else {
             System.out.println("User can not be authenticated at the moment!");
