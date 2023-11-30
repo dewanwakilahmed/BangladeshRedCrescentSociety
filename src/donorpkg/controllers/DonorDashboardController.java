@@ -39,34 +39,42 @@ public class DonorDashboardController implements Initializable {
         welcomeText.setText("Welcome " + authenticatedUserName);
     }    
 
+    @FXML
     private void onViewOngoingCampaignsButtonAction(ActionEvent event) throws Exception {
         loadView("ViewOngoingCampaignsScene", event);
     }
 
+    @FXML
     private void onMakeFinancialDonationsButtonAction(ActionEvent event) throws Exception {
         loadView("MakeFinancialDonationsScene", event);
     }
 
+    @FXML
     private void onMakeGoodsDonationsButtonAction(ActionEvent event) throws Exception{
         loadView("MakeGoodsDonationsScene", event);
     }
 
+    @FXML
     private void onViewPastDonationsButtonAction(ActionEvent event) throws Exception {
         loadView("ViewPastDonationsScene", event);
     }
 
+    @FXML
     private void onGenerateTaxReceiptButtonAction(ActionEvent event) throws Exception {
         loadView("GenerateTaxReceiptScene", event);
     }
 
+    @FXML
     private void onUpdateProfileButtonAction(ActionEvent event) throws Exception {
         loadView("UpdateProfileScene", event);
     }
 
+    @FXML
     private void onViewOrganizationProfileButtonAction(ActionEvent event) throws Exception {
         loadView("ViewOrganizationProfileScene", event);
     }
 
+    @FXML
     private void onLogOutButtonAction(ActionEvent event) throws Exception {
         Session.closeSession();
         
