@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import authenticationpkg.models.Session;
 
 /**
  *
@@ -35,15 +36,22 @@ public class ViewUtility {
     }
     
     public static String createViewFilePath(String viewName) {
-        String pkgName = viewName.toLowerCase() + "pkg";
+        String viewFilePath = new String("/resources/scenes");
+
+        String userType = "";
         
-        if (viewName.equals("Welcome")) {
-            pkgName = "mainpkg";
+        Session session = Session.getInstance();
+        
+        if (session != null) {
+            userType = session.getUser().getUserRole().toLowerCase();
+            viewFilePath = viewFilePath.concat("/");
         }
         
-        String viewFilePath = "/" + pkgName + "/views/" + viewName.toLowerCase() + "-view.fxml";
+        viewFilePath = viewFilePath.concat(userType + "/" + viewName + ".fxml");
+        
+        System.out.println(viewFilePath);
         
         return viewFilePath;
     }
-
+    
 }
