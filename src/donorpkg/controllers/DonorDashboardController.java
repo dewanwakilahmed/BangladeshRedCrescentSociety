@@ -1,7 +1,5 @@
 package donorpkg.controllers;
 
-import authenticationpkg.models.Session;
-import authenticationpkg.models.User;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -9,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
 import static mainpkg.utilities.ViewUtility.loadView;
+import authenticationpkg.models.Session;
+import authenticationpkg.models.User;
 
 /**
  * FXML Controller class
@@ -39,36 +39,35 @@ public class DonorDashboardController implements Initializable {
         welcomeText.setText("Welcome " + authenticatedUserName);
     }    
 
-    @FXML
-    private void viewOngoingCampaigns(ActionEvent event) {
+    private void onViewOngoingCampaignsButtonAction(ActionEvent event) throws Exception {
+        loadView("ViewOngoingCampaignsScene", event);
     }
 
-    @FXML
-    private void makeFinancialDonations(ActionEvent event) {
+    private void onMakeFinancialDonationsButtonAction(ActionEvent event) throws Exception {
+        loadView("MakeFinancialDonationsScene", event);
     }
 
-    @FXML
-    private void makeGoodsDonations(ActionEvent event) {
+    private void onMakeGoodsDonationsButtonAction(ActionEvent event) throws Exception{
+        loadView("MakeGoodsDonationsScene", event);
     }
 
-    @FXML
-    private void viewPastDonations(ActionEvent event) {
+    private void onViewPastDonationsButtonAction(ActionEvent event) throws Exception {
+        loadView("ViewPastDonationsScene", event);
     }
 
-    @FXML
-    private void generateTaxReceipt(ActionEvent event) {
+    private void onGenerateTaxReceiptButtonAction(ActionEvent event) throws Exception {
+        loadView("GenerateTaxReceiptScene", event);
     }
 
-    @FXML
-    private void updateProfile(ActionEvent event) {
+    private void onUpdateProfileButtonAction(ActionEvent event) throws Exception {
+        loadView("UpdateProfileScene", event);
     }
 
-    @FXML
-    private void viewOrganizationProfile(ActionEvent event) {
+    private void onViewOrganizationProfileButtonAction(ActionEvent event) throws Exception {
+        loadView("ViewOrganizationProfileScene", event);
     }
 
-    @FXML
-    private void logOut(ActionEvent event) throws Exception {
+    private void onLogOutButtonAction(ActionEvent event) throws Exception {
         Session.closeSession();
         
         System.out.println(authenticatedUser.toString() + " has been logged out successfully!");

@@ -25,29 +25,29 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </Text>
-      <Button minWidth="155.0" mnemonicParsing="false" onAction="#viewOngoingCampaigns" text="View Ongoing Campaigns" />
+      <Button minWidth="155.0" mnemonicParsing="false" onAction="#onViewOngoingCampaignsButtonAction" text="View Ongoing Campaigns" />
       <HBox alignment="CENTER" spacing="10.0">
          <VBox.margin>
             <Insets />
          </VBox.margin>
          <children>
-            <Button minWidth="155.0" mnemonicParsing="false" onAction="#makeFinancialDonations" text="Make Financial Donations" />
-            <Button minWidth="155.0" mnemonicParsing="false" onAction="#makeGoodsDonations" text="Make Goods Donations" />
+            <Button minWidth="155.0" mnemonicParsing="false" onAction="#onMakeFinancialDonationsButtonAction" text="Make Financial Donations" />
+            <Button minWidth="155.0" mnemonicParsing="false" onAction="#onMakeGoodsDonationsButtonAction" text="Make Goods Donations" />
          </children>
       </HBox>
       <HBox alignment="CENTER" spacing="10.0">
          <children>
-            <Button minWidth="155.0" mnemonicParsing="false" onAction="#viewPastDonations" text="View Past Donations" />
-            <Button minWidth="155.0" mnemonicParsing="false" onAction="#generateTaxReceipt" text="Generate Tax Receipt" />
+            <Button minWidth="155.0" mnemonicParsing="false" onAction="#onViewPastDonationsButtonAction" text="View Past Donations" />
+            <Button minWidth="155.0" mnemonicParsing="false" onAction="#onGenerateTaxReceiptButtonAction" text="Generate Tax Receipt" />
          </children>
       </HBox>
       <HBox alignment="CENTER" spacing="10.0">
          <children>
-            <Button minWidth="155.0" mnemonicParsing="false" onAction="#updateProfile" text="Update Profile" />
-            <Button minWidth="155.0" mnemonicParsing="false" onAction="#viewOrganizationProfile" text="View Organization Profile" />
+            <Button minWidth="155.0" mnemonicParsing="false" onAction="#onUpdateProfileButtonAction" text="Update Profile" />
+            <Button minWidth="155.0" mnemonicParsing="false" onAction="#onViewOrganizationProfileButtonAction" text="View Organization Profile" />
          </children>
       </HBox>
-      <Button minWidth="155.0" mnemonicParsing="false" onAction="#logOut" text="Log Out">
+      <Button minWidth="155.0" mnemonicParsing="false" onAction="#onLogOutButtonAction" text="Log Out">
          <VBox.margin>
             <Insets top="15.0" />
          </VBox.margin>
