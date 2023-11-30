@@ -16,6 +16,7 @@ import authenticationpkg.models.Session;
 import authenticationpkg.models.User;
 import javafx.scene.layout.HBox;
 import static mainpkg.utilities.ErrorUtility.showError;
+import static mainpkg.utilities.ViewUtility.loadUserDashboard;
 import static mainpkg.utilities.ViewUtility.loadView;
 
 /**
@@ -117,10 +118,7 @@ public class AuthenticationUtility {
         Session.setInstance(user);
         
         if (Session.getInstance() != null) {
-            User authenticatedUser = Session.getInstance().getUser();
-            System.out.println(authenticatedUser.toString() + " has been authenticated successfully!");
-            String sceneName = user.getUserRole() + "DashboardScene";
-            loadView(sceneName, event);
+            loadUserDashboard(event);
         } else {
             System.out.println("User can not be authenticated at the moment!");
             showError("User can not be authenticated at the moment!");
