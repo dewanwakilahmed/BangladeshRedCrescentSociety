@@ -12,7 +12,7 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-       loadView("Welcome", null);
+       loadView("WelcomeScene", null);
     }
 
     /**
