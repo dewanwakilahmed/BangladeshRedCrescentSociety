@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import javafx.event.ActionEvent;
 import authenticationpkg.models.Session;
 import authenticationpkg.models.User;
+import javafx.scene.layout.HBox;
 import static mainpkg.utilities.ErrorUtility.showError;
 import static mainpkg.utilities.ViewUtility.loadView;
 
@@ -23,10 +24,9 @@ import static mainpkg.utilities.ViewUtility.loadView;
  */
 public class AuthenticationUtility {
     
-    public static void makeSwitch(Text titleText, String newTitleText, Label retypePasswordLabel, boolean isRetypePasswordLabelVisible, PasswordField retypePasswordField, boolean isRetypePasswordFieldVisible, Button authButton, String newAuthButtonText, Label switchLabel, String newSwitchLabelText, Button switchButton, String newSwitchButtonText) {
+    public static void makeSwitch(Text titleText, String newTitleText, HBox retypePasswordHBox, boolean isRetypePasswordHBoxVisible, Button authButton, String newAuthButtonText, Label switchLabel, String newSwitchLabelText, Button switchButton, String newSwitchButtonText) {
         titleText.setText(newTitleText);
-        retypePasswordLabel.setVisible(isRetypePasswordLabelVisible);
-        retypePasswordField.setVisible(isRetypePasswordFieldVisible);
+        retypePasswordHBox.setVisible(isRetypePasswordHBoxVisible);
         authButton.setText(newAuthButtonText);
         switchLabel.setText(newSwitchLabelText);
         switchButton.setText(newSwitchButtonText);
@@ -117,8 +117,10 @@ public class AuthenticationUtility {
         Session.setInstance(user);
         
         if (Session.getInstance() != null) {
-            System.out.println(user.toString() + " has been authenticated successfully!");
-            loadView(user.getUserRole(), event);
+            User authenticatedUser = Session.getInstance().getUser();
+            System.out.println(authenticatedUser.toString() + " has been authenticated successfully!");
+            String sceneName = user.getUserRole() + "DashboardScene";
+            loadView(sceneName, event);
         } else {
             System.out.println("User can not be authenticated at the moment!");
             showError("User can not be authenticated at the moment!");
