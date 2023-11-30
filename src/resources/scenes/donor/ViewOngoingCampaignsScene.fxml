@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="donorpkg.controllers.ViewOngoingCampaignsController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ongoing Fundraising Campaigns">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="* The Goal and Contribute amounts below are in Bangladeshi Taka (BDT).">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </Text>
+      <HBox alignment="CENTER" prefHeight="400.0" prefWidth="200.0">
+         <children>
+            <TableView fx:id="ongoingFundraisingCampaignsTableView">
+              <columns>
+                <TableColumn fx:id="campaignTitleTableColumn" minWidth="275.0" prefWidth="-1.0" text="Campaign Title" />
+                <TableColumn fx:id="campaignGoalTableColumn" minWidth="125.0" prefWidth="-1.0" text="Goal" />
+                  <TableColumn fx:id="campaignContributionsTableColumn" minWidth="125.0" prefWidth="-1.0" text="Contributions" />
+                  <TableColumn fx:id="campaignOpenedOnTableColumn" minWidth="100.0" prefWidth="-1.0" text="Opened on" />
+                  <TableColumn fx:id="campaignClosingInTableColumn" minWidth="100.0" prefWidth="-1.0" text="Closing in" />
+              </columns>
+            </TableView>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" maxWidth="727.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onGoBackButtonAction" prefWidth="105.0" text="Go Back" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#onMakeDonationsAction" prefWidth="105.0" text="Make Donations" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
