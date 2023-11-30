@@ -23,7 +23,7 @@ public class WelcomeController implements Initializable {
 
     @FXML
     private void loadAuthView(ActionEvent event) throws Exception {
-        loadView("Authentication", event);
+        loadView("AuthenticationScene", event);
     }
 
 }
