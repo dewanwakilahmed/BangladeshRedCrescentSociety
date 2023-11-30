@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="975.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="donorpkg.controllers.UpdateProfileController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Update User Profile">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </Text>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Authentication Credentials">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0" spacing="5.0">
+         <children>
+            <Label text="User Name:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="userNameTextField" minWidth="450.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0" spacing="5.0">
+         <children>
+            <Label text="Password:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <PasswordField fx:id="userPasswordField" minWidth="450.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Information">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0" spacing="5.0">
+         <children>
+            <Label text="Full Name:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="fullNameTextField" minWidth="450.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0" spacing="5.0">
+         <children>
+            <Label text="Email:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="emailTextField" minWidth="450.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0" spacing="5.0">
+         <children>
+            <Label text="Address:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="addressTextField" minWidth="450.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Banking Information">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0" spacing="5.0">
+         <children>
+            <Label text="Bank Name:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="bankNameTextField" minWidth="450.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0" spacing="5.0">
+         <children>
+            <Label text="Account Number:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="accountNumberTextField" minWidth="450.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0" spacing="5.0">
+         <children>
+            <Label text="Routing Number:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="routingNumberTextField" minWidth="450.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tax Information">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0" spacing="5.0">
+         <children>
+            <Label text="TIN:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="tinTextField" minWidth="450.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0">
+         <children>
+            <Button minWidth="100.0" mnemonicParsing="false" onAction="#onGoBackButtonAction" text="Go Back" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button minWidth="100.0" mnemonicParsing="false" onAction="#onUpdateProfileButtonAction" text="Update Profile" />
+         </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
