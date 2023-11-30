@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.scene.layout.HBox;
 import authenticationpkg.models.User;
 import static mainpkg.utilities.InitializeViewsUtility.loadComboBox;
 import static authenticationpkg.utilities.AuthenticationUtility.findUser;
@@ -34,17 +35,17 @@ public class AuthenticationController implements Initializable {
     @FXML
     private TextField userNameTextField;
     @FXML
-    private PasswordField passwordField;
-    @FXML
-    private Label retypePasswordLabel;
-    @FXML
     private PasswordField retypePasswordField;
+    @FXML
+    private PasswordField passwordField;
     @FXML
     private Button authButton;
     @FXML
     private Label switchLabel;
     @FXML
     private Button switchButton;
+    @FXML
+    private HBox retypePasswordHBox;
     
     private boolean isLoginMode;
 
@@ -55,7 +56,7 @@ public class AuthenticationController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         isLoginMode = true;        
         if (isLoginMode) {
-            makeSwitch(titleText, "Login to your Account", retypePasswordLabel, false, retypePasswordField, false, authButton, "Login", switchLabel, "Don't have an account?", switchButton, "Register");
+            makeSwitch(titleText, "Login to your Account", retypePasswordHBox, false, authButton, "Login", switchLabel, "Don't have an account?", switchButton, "Register");
         }
         
         String[] userRolesArray = {"Donor", "Beneficiary", "Admin", "Staff", "Accounts Manager", "Inventory Manager", "Shelter Manager", "Medical Professional"};     
@@ -84,9 +85,9 @@ public class AuthenticationController implements Initializable {
         isLoginMode = !isLoginMode;
 
         if (isLoginMode) {
-            makeSwitch(titleText, "Login to your Account", retypePasswordLabel, false, retypePasswordField, false, authButton, "Login", switchLabel, "Don't have an account?", switchButton, "Register");
+            makeSwitch(titleText, "Login to your Account", retypePasswordHBox, false, authButton, "Login", switchLabel, "Don't have an account?", switchButton, "Register");
         } else {
-            makeSwitch(titleText, "Register a New Account", retypePasswordLabel, true, retypePasswordField, true, authButton, "Register", switchLabel, "Already have an account?", switchButton, "Login");
+            makeSwitch(titleText, "Register New Account", retypePasswordHBox, true, authButton, "Register", switchLabel, "Already have an account?", switchButton, "Login");
         }
     }
     
