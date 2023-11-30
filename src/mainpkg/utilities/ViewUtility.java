@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import authenticationpkg.models.Session;
+import authenticationpkg.models.User;
 
 /**
  *
@@ -52,6 +53,12 @@ public class ViewUtility {
         System.out.println(viewFilePath);
         
         return viewFilePath;
+    }
+    
+    public static void loadUserDashboard(ActionEvent event) throws Exception {
+        User authenticatedUser = Session.getInstance().getUser();
+        String sceneName = authenticatedUser.getUserRole() + "DashboardScene";
+        loadView(sceneName, event);
     }
     
 }
