@@ -6,6 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
+import authenticationpkg.models.Session;
+import authenticationpkg.models.User;
+import static mainpkg.utilities.ViewUtility.loadView;
 
 /**
  * FXML Controller class
@@ -19,12 +22,21 @@ public class BeneficiaryDashboardController implements Initializable {
     @FXML
     private Text welcomeText;
 
+    private User authenticatedUser;
+    private String authenticatedUserName;
+    private String authenticatedUserRole;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        authenticatedUser = Session.getInstance().getUser();
+        authenticatedUserName = authenticatedUser.getUserName();
+        authenticatedUserRole = authenticatedUser.getUserRole();
+        
+        dashboardTitle.setText(authenticatedUserRole + " Dashboard");
+        welcomeText.setText("Welcome " + authenticatedUserName);
     }    
 
     @FXML
@@ -56,7 +68,16 @@ public class BeneficiaryDashboardController implements Initializable {
     }
 
     @FXML
-    private void onLogOutButtonAction(ActionEvent event) {
+    private void onLogOutButtonAction(ActionEvent event) throws Exception {
+        Session.closeSession();
+        
+        System.out.println(authenticatedUser.toString() + " has been logged out successfully!");
+        
+        authenticatedUser = null;
+        authenticatedUserName = null;
+        authenticatedUserRole = null;
+        
+        loadView("AuthenticationScene", event);
     }
     
 }
