@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="donorpkg.controllers.MakeGoodsDonationsController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Make Goods Donations">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="* The amount below is in Kilogram (KG)." wrappingWidth="350.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="* Your donation package pickup address is set below from your profile, you can change it if you want us to pick from a different location." wrappingWidth="350.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" top="-5.0" />
+         </VBox.margin>
+      </Text>
+      <HBox alignment="CENTER" maxWidth="350.0" spacing="5.0">
+         <children>
+            <Label text="Pickup Address:" />
+            <TextField fx:id="pickUpAddressTextField" HBox.hgrow="ALWAYS" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Create Donation Package">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Text>
+      <HBox alignment="CENTER" maxWidth="225.0" spacing="5.0">
+         <children>
+            <Label text="Goods Item:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <ComboBox fx:id="goodsItemComboBox" prefWidth="149.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxWidth="225.0" spacing="5.0">
+         <children>
+            <Label text="Amount:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="goodsAmountTextField" />
+         </children>
+      </HBox>
+      <Button minWidth="105.0" mnemonicParsing="false" onAction="#onAddToPackageButtonAction" text="Add to Package" />
+      <HBox alignment="CENTER" maxWidth="350.0">
+         <children>
+            <TableView fx:id="goodsDonationPackageTableView" prefHeight="150.0" prefWidth="201.0">
+              <columns>
+                <TableColumn fx:id="goodsPackageItemTableColumn" minWidth="125.0" prefWidth="-1.0" text="Item" />
+                <TableColumn fx:id="goodsPackageAmountTableColumn" minWidth="75.0" prefWidth="-1.0" text="Amount" />
+              </columns>
+            </TableView>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <Button minWidth="105.0" mnemonicParsing="false" onAction="#onDonatePackageButtonAction" text="Donate Package" />
+      <HBox alignment="CENTER" maxWidth="350.0">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+         <children>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button minWidth="105.0" mnemonicParsing="false" onAction="#onBackToDashboardButtonAction" text="Back to Dashboard" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
