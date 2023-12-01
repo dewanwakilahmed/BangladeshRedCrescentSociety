@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="beneficiarypkg.controllers.FinancialAidRequestController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Request for Financial Aid">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="* Your bank account details are already set below from your profile, you can change them if you want to use a different account." wrappingWidth="400.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </Text>
+      <HBox alignment="CENTER" maxWidth="275.0" spacing="5.0">
+         <children>
+            <Label text="Bank Name:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="bankNameTextField" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxWidth="275.0" spacing="5.0">
+         <children>
+            <Label text="Account Number:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="accountNumberTextField" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxWidth="275.0" spacing="5.0">
+         <children>
+            <Label text="Routing Number:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="routingNumberTextField" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="275.0" spacing="5.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Request Aid">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxWidth="275.0" spacing="5.0">
+         <children>
+            <Label text="Aid Amount:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="aidAmountTextField" />
+         </children>
+      </HBox>
+      <Button minWidth="100.0" mnemonicParsing="false" onAction="#onRequestAidButtonAction" text="Request Aid" />
+      <HBox alignment="CENTER" maxWidth="275.0" spacing="5.0">
+         <children>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button minWidth="100.0" mnemonicParsing="false" onAction="#onBackToDashboardButtonAction" text="Back to Dashboard" />
+         </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
