@@ -9,6 +9,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import static mainpkg.utilities.ViewUtility.loadUserDashboard;
 
 /**
  * FXML Controller class
@@ -47,7 +48,8 @@ public class MakeGoodsDonationsController implements Initializable {
     }
 
     @FXML
-    private void onBackToDashboardButtonAction(ActionEvent event) {
+    private void onBackToDashboardButtonAction(ActionEvent event) throws Exception {
+        loadUserDashboard(event);
     }
     
 }
