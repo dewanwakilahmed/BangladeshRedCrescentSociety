@@ -43,7 +43,9 @@ public class ViewUtility {
         
         Session session = Session.getInstance();
         
-        if (session != null) {
+        if (viewName.equals("UpdateUserProfileScene")) {
+            userType = "";
+        } else {
             userType = session.getUser().getUserRole().toLowerCase();
             viewFilePath = viewFilePath.concat("/");
         }
