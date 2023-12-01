@@ -15,7 +15,7 @@ import javafx.event.ActionEvent;
 import authenticationpkg.models.Session;
 import authenticationpkg.models.User;
 import javafx.scene.layout.HBox;
-import static mainpkg.utilities.ErrorUtility.showError;
+import static mainpkg.utilities.AlertUtility.showError;
 import static mainpkg.utilities.ViewUtility.loadUserDashboard;
 
 /**
