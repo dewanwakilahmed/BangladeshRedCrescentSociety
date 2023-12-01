@@ -9,7 +9,7 @@ import javafx.stage.Stage;
  *
  * @author dewan
  */
-public class ErrorUtility {
+public class AlertUtility {
     
     public static void showError(String message) {
         Alert alert = new Alert(AlertType.ERROR);
@@ -23,4 +23,15 @@ public class ErrorUtility {
         alert.showAndWait();
     }
     
+    public static void showConfirmation(String message) {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+
+        Stage alertStage = (Stage) alert.getDialogPane().getScene().getWindow();
+//        alertStage.getIcons().add(new Image("/resources/icons/error-logo.png"));
+
+        alert.showAndWait();
+    }    
 }
