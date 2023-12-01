@@ -50,6 +50,13 @@
             <PasswordField fx:id="userPasswordField" minWidth="450.0" />
          </children>
       </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="555.0" spacing="5.0">
+         <children>
+            <Label text="User Role:" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="userRoleTextField" editable="false" minWidth="450.0" />
+         </children>
+      </HBox>
       <HBox alignment="CENTER_LEFT" maxWidth="555.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Information">
