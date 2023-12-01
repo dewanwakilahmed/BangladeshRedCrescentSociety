@@ -1,1 +1,2 @@
 johnDoe  12345  Donor
+sammyMorshed  54321  Beneficiary
