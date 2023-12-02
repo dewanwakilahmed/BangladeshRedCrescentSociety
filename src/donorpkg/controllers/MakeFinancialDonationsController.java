@@ -89,7 +89,7 @@ public class MakeFinancialDonationsController implements Initializable {
                          accountNumberTextField.getText() + "  " +
                          routingNumberTextField.getText() + "  " +
                          selectCampaignComboBox.getValue() + "  " + 
-                         contributionAmountTextField.getText() + "  " + "pending\n");
+                         contributionAmountTextField.getText() + "  " + "Pending\n");
             writer.flush();
             showConfirmation("A donation of " + contributionAmountTextField.getText() + "BDT has been made to '" + selectCampaignComboBox.getValue() + "' campaign. Thank you!");
         } catch (IOException e) {
@@ -106,7 +106,7 @@ public class MakeFinancialDonationsController implements Initializable {
                          bankNameTextField.getText() + "  " +
                          accountNumberTextField.getText() + "  " +
                          routingNumberTextField.getText() + "  " +
-                         donationAmountTextField.getText() + "  " + "pending\n");
+                         donationAmountTextField.getText() + "  " + "Pending\n");
             writer.flush();
             showConfirmation("A personal donation of " + donationAmountTextField.getText() + "BDT has been made. Thank you!");
         } catch (IOException e) {
