@@ -43,7 +43,7 @@
       </HBox>
       <HBox alignment="CENTER" spacing="10.0">
          <children>
-            <Button minWidth="155.0" mnemonicParsing="false" onAction="#onUpdateProfileButtonAction" text="Update Profile" />
+            <Button minWidth="155.0" mnemonicParsing="false" onAction="#onUpdateUserProfileButtonAction" text="Update User Profile" />
             <Button minWidth="155.0" mnemonicParsing="false" onAction="#onViewOrganizationProfileButtonAction" text="View Organization Profile" />
          </children>
       </HBox>
