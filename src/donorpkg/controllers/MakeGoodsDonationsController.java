@@ -101,5 +101,5 @@ public class MakeGoodsDonationsController implements Initializable {
     private void onBackToDashboardButtonAction(ActionEvent event) throws Exception {
         loadUserDashboard(event);
     }
-    
+
 }
