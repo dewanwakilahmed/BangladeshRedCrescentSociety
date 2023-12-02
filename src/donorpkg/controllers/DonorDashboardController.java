@@ -65,8 +65,8 @@ public class DonorDashboardController implements Initializable {
     }
 
     @FXML
-    private void onUpdateProfileButtonAction(ActionEvent event) throws Exception {
-        loadView("UpdateProfileScene", event);
+    private void onUpdateUserProfileButtonAction(ActionEvent event) throws Exception {
+        loadView("UpdateUserProfileScene", event);
     }
 
     @FXML
