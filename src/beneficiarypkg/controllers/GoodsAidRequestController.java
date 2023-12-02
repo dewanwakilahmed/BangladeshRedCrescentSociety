@@ -5,9 +5,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 /**
@@ -20,15 +17,13 @@ public class GoodsAidRequestController implements Initializable {
     @FXML
     private TextField deliveryAddressTextField;
     @FXML
-    private ComboBox<?> goodsItemComboBox;
+    private TextField riceAmountTextField;
     @FXML
-    private TextField goodsAmountTextField;
+    private TextField lentilsAmountTextField;
     @FXML
-    private TableView<?> goodsPackageTableView;
+    private TextField oilAmountTextField;
     @FXML
-    private TableColumn<?, ?> goodsPackageItemTableColumn;
-    @FXML
-    private TableColumn<?, ?> goodsPackageItemAmountTableColumn;
+    private TextField saltAmountTextField;
 
     /**
      * Initializes the controller class.
@@ -37,10 +32,6 @@ public class GoodsAidRequestController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void onAddToPackageButtonAction(ActionEvent event) {
-    }
 
     @FXML
     private void onRequestPackageButtonAction(ActionEvent event) {
