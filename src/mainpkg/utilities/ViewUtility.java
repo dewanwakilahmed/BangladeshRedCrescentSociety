@@ -44,15 +44,16 @@ public class ViewUtility {
         Session session = Session.getInstance();
         
         if (viewName.equals("UpdateUserProfileScene")) {
-            userType = "";
-        } else {
+            viewFilePath = "/resources/scenes/UpdateUserProfileScene.fxml";
+            return viewFilePath;
+        }
+        
+        if (session !=  null) {
             userType = session.getUser().getUserRole().toLowerCase();
             viewFilePath = viewFilePath.concat("/");
         }
         
         viewFilePath = viewFilePath.concat(userType + "/" + viewName + ".fxml");
-        
-        System.out.println(viewFilePath);
         
         return viewFilePath;
     }
